@@ -1,0 +1,44 @@
+[
+  {
+    "date": "01-10-2025",
+    "title": "Neuer WebMap-Prototyp veröffentlicht",
+    "image": "https://picsum.photos/seed/webmap/800/450",
+    "summary": "Neuer WebMap-Prototyp für nachhaltige Stadtplanung veröffentlicht. Interaktive Karten visualisieren Frei- und Grünflächen sowie Verkehrsströme.",
+    "link": "#"
+  },
+  {
+    "date": "15-07-2025",
+    "title": "Vortrag: Fernerkundung für urbane Resilienz",
+    "image": "https://picsum.photos/seed/talk/800/450",
+    "summary": "Vortrag auf der GeoKonferenz: Einsatz von Fernerkundungsdaten zur Verbesserung der städtischen Resilienz gegenüber Extremereignissen.",
+    "link": "#"
+  },
+  {
+    "date": "10-04-2025",
+    "title": "Kooperation mit lokalen Behörden gestartet",
+    "image": "https://picsum.photos/seed/coop/800/450",
+    "summary": "Gemeinsame Datenbereitstellung und Pilotprojekte zur Integration von Geodaten in kommunale Entscheidungsprozesse.",
+    "link": "#"
+  },
+  {
+    "date": "05-03-2025",
+    "title": "Open-Source-Library für Web-GIS veröffentlicht",
+    "image": "https://picsum.photos/seed/oss/800/450",
+    "summary": "Veröffentlichung einer leichtgewichtigen JavaScript-Bibliothek für Web-GIS-Visualisierungen auf GitHub. Dokumentation und Beispiele enthalten.",
+    "link": "https://github.com/"
+  },
+  {
+    "date": "20-01-2025",
+    "title": "Workshop: Geodaten für nachhaltige Städte",
+    "image": "https://picsum.photos/seed/workshop/800/450",
+    "summary": "Halbtägiger Workshop für kommunale Mitarbeitende: Nutzung von Geodaten zur Planung klimafester Infrastruktur.",
+    "link": "#"
+  },
+  {
+    "date": "12-11-2024",
+    "title": "Abschlussbericht Projekt Grünnetz",
+    "image": "https://picsum.photos/seed/gruennetz/800/450",
+    "summary": "Abschlussbericht veröffentlicht: Analyse und Empfehlungen zum Ausbau urbaner Grünnetze basierend auf multispektralen Satellitendaten.",
+    "link": "#"
+  }
+]
