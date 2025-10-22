@@ -458,7 +458,6 @@
             });
 
             // --- Tab functionality ---
-            const TAB_KEY = 'activeTab';
             const tabsEl = document.querySelectorAll('[role="tab"]');
             const panels = document.querySelectorAll('[role="tabpanel"]');
 
@@ -471,11 +470,6 @@
                 panels.forEach(p => {
                     p.hidden = p.getAttribute('aria-labelledby') !== tab.id;
                 });
-                try { sessionStorage.setItem(TAB_KEY, tab.id); } catch (e) {}
-            }
-
-            function getSavedTab() {
-                try { return sessionStorage.getItem(TAB_KEY); } catch (e) { return null; }
             }
 
             // attach click handlers and keyboard navigation
@@ -495,22 +489,9 @@
                 });
             });
 
-            // restore saved tab or default
-            const savedTabId = getSavedTab();
-            const initialTab = savedTabId ? document.getElementById(savedTabId) : document.querySelector('[role="tab"][aria-selected="true"]');
-            if (initialTab) activateTab(initialTab);
-
-            // keep tabs in sync across windows using storage (sessionStorage does not sync, but we listen to visibility to re-read)
-            // when visibility changes, try to reapply saved session value
-            document.addEventListener('visibilitychange', () => {
-                if (document.visibilityState === 'visible') {
-                    const fresh = getSavedTab();
-                    if (fresh) {
-                        const el = document.getElementById(fresh);
-                        if (el) activateTab(el);
-                    }
-                }
-            });
+            // Always open About by default to ensure content is shown there (clears any previously saved state in the browser)
+            const defaultTab = document.getElementById('tab-about');
+            if (defaultTab) activateTab(defaultTab);
 
         })();
     </script>
