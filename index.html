@@ -192,11 +192,11 @@
         #theme-toggle:active { transform: scale(0.98); }
         #theme-toggle svg { width: 24px; height: 24px; display: block; }
         /* show/hide icons depending on theme - swapped: moon visible in light, sun visible in dark */
-        /* highlight moon in yellow for better visibility */
-        #theme-toggle .icon-sun { display: none; }
-        #theme-toggle .icon-moon { display: block; color: #f6c94d; }
+        /* both icons white; moon visible in light, sun visible in dark (swapped) */
+        #theme-toggle .icon-sun { display: none; color: #ffffff; }
+        #theme-toggle .icon-moon { display: block; color: #ffffff; }
         [data-theme="dark"] #theme-toggle .icon-moon { display: none; }
-        [data-theme="dark"] #theme-toggle .icon-sun { display: block; }
+        [data-theme="dark"] #theme-toggle .icon-sun { display: block; color: #ffffff; }
 
         @media (max-width: 720px) {
             main {
