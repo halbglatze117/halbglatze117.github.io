@@ -344,11 +344,9 @@
                 <section id="panel-news" class="panel" role="tabpanel" aria-labelledby="tab-news" hidden>
                     <!-- News: Aktuelle Ereignisse (als Liste) -->
                     <h2 style="margin-top:0;">News</h2>
-                    <ul>
-                        <li><strong>2025-10-01:</strong> Neuer WebMap-Prototyp für nachhaltige Stadtplanung veröffentlicht.</li>
-                        <li><strong>2025-07-15:</strong> Vortrag auf der GeoKonferenz: "Fernerkundung für urbane Resilienz".</li>
-                        <li><strong>2025-04-10:</strong> Kooperation mit lokalen Behörden zur Datenbereitstellung gestartet.</li>
-                    </ul>
+                    <div id="news-container">
+                        <p id="news-loading">Lade Neuigkeiten…</p>
+                    </div>
 
                     <!-- Tabelle in News entfernt (verschoben nach About) -->
 
@@ -492,6 +490,45 @@
             // Always open About by default to ensure content is shown there (clears any previously saved state in the browser)
             const defaultTab = document.getElementById('tab-about');
             if (defaultTab) activateTab(defaultTab);
+
+            // Load news JSON and render into #news-container
+            (function loadNews(){
+                const container = document.getElementById('news-container');
+                const loading = document.getElementById('news-loading');
+                if (!container) return;
+                fetch('assets/news.json', {cache: 'no-store'})
+                    .then(resp => {
+                        if (!resp.ok) throw new Error('Netzwerkfehler');
+                        return resp.json();
+                    })
+                    .then(list => {
+                        if (loading) loading.remove();
+                        if (!Array.isArray(list) || list.length === 0) {
+                            container.innerHTML = '<p>Keine Neuigkeiten vorhanden.</p>';
+                            return;
+                        }
+                        const frag = document.createDocumentFragment();
+                        list.forEach(item => {
+                            const art = document.createElement('article');
+                            art.className = 'news-item card';
+                            art.innerHTML = `\n                            <img src="${item.image}" alt="${escapeHtml(item.title)}" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">\n                            <div class="card-content">\n                                <div style=\"font-size:0.9rem;color:var(--accent);font-weight:600;\">${escapeHtml(item.date)}</div>\n                                <h3 class=\"card-title\">${escapeHtml(item.title)}</h3>\n                                <p class=\"card-text\">${escapeHtml(item.summary)}</p>\n                                ${item.link ? `<a class=\"card-link\" href=\"${item.link}\">Mehr</a>` : ''}\n                            </div>\n                        `;
+                            frag.appendChild(art);
+                        });
+                        const grid = document.createElement('div');
+                        grid.className = 'gallery';
+                        grid.appendChild(frag);
+                        container.appendChild(grid);
+                    })
+                    .catch(err => {
+                        if (loading) loading.remove();
+                        container.innerHTML = '<p>Fehler beim Laden der Neuigkeiten.</p>';
+                        console.error(err);
+                    });
+
+                function escapeHtml(s){
+                    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+                }
+            })();
 
         })();
     </script>
