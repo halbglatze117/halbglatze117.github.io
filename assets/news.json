@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2025-10-01",
+    "title": "Neuer WebMap-Prototyp veröffentlicht",
+    "image": "https://picsum.photos/seed/webmap/800/450",
+    "summary": "Neuer WebMap-Prototyp für nachhaltige Stadtplanung veröffentlicht. Interaktive Karten visualisieren Frei- und Grünflächen sowie Verkehrsströme.",
+    "link": "#"
+  },
+  {
+    "date": "2025-07-15",
+    "title": "Vortrag: Fernerkundung für urbane Resilienz",
+    "image": "https://picsum.photos/seed/talk/800/450",
+    "summary": "Vortrag auf der GeoKonferenz: Einsatz von Fernerkundungsdaten zur Verbesserung der städtischen Resilienz gegenüber Extremereignissen.",
+    "link": "#"
+  },
+  {
+    "date": "2025-04-10",
+    "title": "Kooperation mit lokalen Behörden gestartet",
+    "image": "https://picsum.photos/seed/coop/800/450",
+    "summary": "Gemeinsame Datenbereitstellung und Pilotprojekte zur Integration von Geodaten in kommunale Entscheidungsprozesse.",
+    "link": "#"
+  }
+]
