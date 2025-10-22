@@ -130,6 +130,14 @@
             object-fit: cover;
             display: block;
         }
+        /* Ensure news images have a visible min-height and a neutral background while loading */
+        .news-item img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            min-height: 140px;
+            background: #dfeef8;
+        }
         .card-content {
             padding: 1rem 1rem 1.2rem 1rem;
             flex: 1;
@@ -511,7 +519,7 @@
                         list.forEach(item => {
                             const art = document.createElement('article');
                             art.className = 'news-item card';
-                            art.innerHTML = `\n                            <img src="${item.image}" alt="${escapeHtml(item.title)}" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">\n                            <div class="card-content">\n                                <div style=\"font-size:0.9rem;color:var(--accent);font-weight:600;\">${escapeHtml(item.date)}</div>\n                                <h3 class=\"card-title\">${escapeHtml(item.title)}</h3>\n                                <p class=\"card-text\">${escapeHtml(item.summary)}</p>\n                                ${item.link ? `<a class=\"card-link\" href=\"${item.link}\">Mehr</a>` : ''}\n                            </div>\n                        `;
+                            art.innerHTML = `\n                            <img loading="lazy" src="${item.image}" alt="${escapeHtml(item.title)}" style="aspect-ratio:16/9;object-fit:cover;display:block;" onerror="this.onerror=null;this.src='https://picsum.photos/seed/placeholder/800/450'">\n                            <div class="card-content">\n                                <div style=\"font-size:0.9rem;color:var(--accent);font-weight:600;\">${escapeHtml(item.date)}</div>\n                                <h3 class=\"card-title\">${escapeHtml(item.title)}</h3>\n                                <p class=\"card-text\">${escapeHtml(item.summary)}</p>\n                                ${item.link ? `<a class=\"card-link\" href=\"${item.link}\">Mehr</a>` : ''}\n                            </div>\n                        `;
                             frag.appendChild(art);
                         });
                         const grid = document.createElement('div');
