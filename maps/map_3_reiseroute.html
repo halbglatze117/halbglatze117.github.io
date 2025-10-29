@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ac6ae5e393edf99f36ec120c7adb390a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ac6ae5e393edf99f36ec120c7adb390a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ac6ae5e393edf99f36ec120c7adb390a = L.map(
+                "map_ac6ae5e393edf99f36ec120c7adb390a",
+                {
+                    center: [56.5, -4.5],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0a58560bccd4223a7efb08869ded0ac4 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0a58560bccd4223a7efb08869ded0ac4.addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+            var tile_layer_ddf688f68832c1e5cc107d1bd4d25e0d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ddf688f68832c1e5cc107d1bd4d25e0d.addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+            var poly_line_7380ccfa013de8d5bff65b161405c76f = L.polyline(
+                [[55.9486, -3.1999], [56.1229, -3.945], [56.0147, -4.571], [56.6829, -5.1026]],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "crimson", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+            poly_line_7380ccfa013de8d5bff65b161405c76f.bindTooltip(
+                `<div>
+                     Reiseroute
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8ff91e2ab3b0f5edc3a100e159529c37 = L.marker(
+                [55.9486, -3.1999],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+            var div_icon_3820439381436808ffee5f868684597f = L.divIcon({
+  "html": "\u003cdiv style=\"\n                        font-size:12px;\n                        color:#fff;\n                        background:#2b78e4;\n                        border-radius:15px;\n                        width:24px;\n                        height:24px;\n                        text-align:center;\n                        line-height:24px;\n                        box-shadow:0 0 2px rgba(0,0,0,0.6);\n                    \"\u003e1\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+                marker_8ff91e2ab3b0f5edc3a100e159529c37.setIcon(div_icon_3820439381436808ffee5f868684597f);
+            
+    
+            var marker_ddd7d3325e81aecb022d25c0f58289f2 = L.marker(
+                [55.9486, -3.1999],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_d6612bdf355f0dfae3ed7c0455f494c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14d83548744d6f6a3dac1745adb62a96 = $(`<div id="html_14d83548744d6f6a3dac1745adb62a96" style="width: 100.0%; height: 100.0%;"><b>Edinburgh Castle</b><br>Station 1</div>`)[0];
+                popup_d6612bdf355f0dfae3ed7c0455f494c7.setContent(html_14d83548744d6f6a3dac1745adb62a96);
+            
+        
+
+        marker_ddd7d3325e81aecb022d25c0f58289f2.bindPopup(popup_d6612bdf355f0dfae3ed7c0455f494c7)
+        ;
+
+        
+    
+    
+            marker_ddd7d3325e81aecb022d25c0f58289f2.bindTooltip(
+                `<div>
+                     Edinburgh Castle
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f84f4ac3b92ffcaef7e5f1a0e54a05d3 = L.circleMarker(
+                [55.9486, -3.1999],
+                {"bubblingMouseEvents": true, "color": "#2b78e4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b78e4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_76ecced68e0a885dc2e9036b745bc6dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92351bcc1b33dec2832944cf79db12b4 = $(`<div id="html_92351bcc1b33dec2832944cf79db12b4" style="width: 100.0%; height: 100.0%;">Edinburgh Castle — Stop 1</div>`)[0];
+                popup_76ecced68e0a885dc2e9036b745bc6dc.setContent(html_92351bcc1b33dec2832944cf79db12b4);
+            
+        
+
+        circle_marker_f84f4ac3b92ffcaef7e5f1a0e54a05d3.bindPopup(popup_76ecced68e0a885dc2e9036b745bc6dc)
+        ;
+
+        
+    
+    
+            circle_marker_f84f4ac3b92ffcaef7e5f1a0e54a05d3.bindTooltip(
+                `<div>
+                     Edinburgh Castle (Stop 1)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7e3065c342f7d0bdfa2e4e2226ae6c01 = L.marker(
+                [56.1229, -3.945],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+            var div_icon_f86b672fefafec516afe8df73c21f92c = L.divIcon({
+  "html": "\u003cdiv style=\"\n                        font-size:12px;\n                        color:#fff;\n                        background:#2b78e4;\n                        border-radius:15px;\n                        width:24px;\n                        height:24px;\n                        text-align:center;\n                        line-height:24px;\n                        box-shadow:0 0 2px rgba(0,0,0,0.6);\n                    \"\u003e2\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+                marker_7e3065c342f7d0bdfa2e4e2226ae6c01.setIcon(div_icon_f86b672fefafec516afe8df73c21f92c);
+            
+    
+            var marker_d64024e4a5059afa2b2ab7be3372226c = L.marker(
+                [56.1229, -3.945],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_38c827a3b55f6161352ed372be0a522b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3555c3294d91467496404019c8d0c9f = $(`<div id="html_d3555c3294d91467496404019c8d0c9f" style="width: 100.0%; height: 100.0%;"><b>Stirling Castle</b><br>Station 2</div>`)[0];
+                popup_38c827a3b55f6161352ed372be0a522b.setContent(html_d3555c3294d91467496404019c8d0c9f);
+            
+        
+
+        marker_d64024e4a5059afa2b2ab7be3372226c.bindPopup(popup_38c827a3b55f6161352ed372be0a522b)
+        ;
+
+        
+    
+    
+            marker_d64024e4a5059afa2b2ab7be3372226c.bindTooltip(
+                `<div>
+                     Stirling Castle
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71cd4cd626fb5bceb0b9498a4f5f08d7 = L.circleMarker(
+                [56.1229, -3.945],
+                {"bubblingMouseEvents": true, "color": "#2b78e4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b78e4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_def0285634f0acefa3cc1f290f5b99d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43b704444d92ae51b4a12cb6cf9ca5c7 = $(`<div id="html_43b704444d92ae51b4a12cb6cf9ca5c7" style="width: 100.0%; height: 100.0%;">Stirling Castle — Stop 2</div>`)[0];
+                popup_def0285634f0acefa3cc1f290f5b99d0.setContent(html_43b704444d92ae51b4a12cb6cf9ca5c7);
+            
+        
+
+        circle_marker_71cd4cd626fb5bceb0b9498a4f5f08d7.bindPopup(popup_def0285634f0acefa3cc1f290f5b99d0)
+        ;
+
+        
+    
+    
+            circle_marker_71cd4cd626fb5bceb0b9498a4f5f08d7.bindTooltip(
+                `<div>
+                     Stirling Castle (Stop 2)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a0833b12a50ccedb84a2395428c703d4 = L.marker(
+                [56.0147, -4.571],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+            var div_icon_1b8613cd7a6ca6e23ad24857e6dd120e = L.divIcon({
+  "html": "\u003cdiv style=\"\n                        font-size:12px;\n                        color:#fff;\n                        background:#2b78e4;\n                        border-radius:15px;\n                        width:24px;\n                        height:24px;\n                        text-align:center;\n                        line-height:24px;\n                        box-shadow:0 0 2px rgba(0,0,0,0.6);\n                    \"\u003e3\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+                marker_a0833b12a50ccedb84a2395428c703d4.setIcon(div_icon_1b8613cd7a6ca6e23ad24857e6dd120e);
+            
+    
+            var marker_87ca4ac8e9dd12a3ee3e7c69d55b7342 = L.marker(
+                [56.0147, -4.571],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_d8b51ac3ccf8852ac4a8fb4e62651f64 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ff8a21e9ef178929d2c70e47a336d61 = $(`<div id="html_1ff8a21e9ef178929d2c70e47a336d61" style="width: 100.0%; height: 100.0%;"><b>Loch Lomond (Balloch)</b><br>Station 3</div>`)[0];
+                popup_d8b51ac3ccf8852ac4a8fb4e62651f64.setContent(html_1ff8a21e9ef178929d2c70e47a336d61);
+            
+        
+
+        marker_87ca4ac8e9dd12a3ee3e7c69d55b7342.bindPopup(popup_d8b51ac3ccf8852ac4a8fb4e62651f64)
+        ;
+
+        
+    
+    
+            marker_87ca4ac8e9dd12a3ee3e7c69d55b7342.bindTooltip(
+                `<div>
+                     Loch Lomond (Balloch)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1df3fac82436093d9283f65492fbdc9b = L.circleMarker(
+                [56.0147, -4.571],
+                {"bubblingMouseEvents": true, "color": "#2b78e4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b78e4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_ef5ac67f6acde2bab5449946d186df9a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_984200f67d0d571e47fec3f1bb0d75e0 = $(`<div id="html_984200f67d0d571e47fec3f1bb0d75e0" style="width: 100.0%; height: 100.0%;">Loch Lomond (Balloch) — Stop 3</div>`)[0];
+                popup_ef5ac67f6acde2bab5449946d186df9a.setContent(html_984200f67d0d571e47fec3f1bb0d75e0);
+            
+        
+
+        circle_marker_1df3fac82436093d9283f65492fbdc9b.bindPopup(popup_ef5ac67f6acde2bab5449946d186df9a)
+        ;
+
+        
+    
+    
+            circle_marker_1df3fac82436093d9283f65492fbdc9b.bindTooltip(
+                `<div>
+                     Loch Lomond (Balloch) (Stop 3)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_57ef2471a32b5fd6f83e3e1faee16a10 = L.marker(
+                [56.6829, -5.1026],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+            var div_icon_22db9d7db5eb337efe0e699105b9fca2 = L.divIcon({
+  "html": "\u003cdiv style=\"\n                        font-size:12px;\n                        color:#fff;\n                        background:#2b78e4;\n                        border-radius:15px;\n                        width:24px;\n                        height:24px;\n                        text-align:center;\n                        line-height:24px;\n                        box-shadow:0 0 2px rgba(0,0,0,0.6);\n                    \"\u003e4\u003c/div\u003e",
+  "iconSize": [30, 30],
+  "iconAnchor": [15, 15],
+  "className": "empty",
+});
+        
+    
+                marker_57ef2471a32b5fd6f83e3e1faee16a10.setIcon(div_icon_22db9d7db5eb337efe0e699105b9fca2);
+            
+    
+            var marker_462b168d06cd16fed3730ad27ae84ca0 = L.marker(
+                [56.6829, -5.1026],
+                {
+}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_ef6a9e6b97016d23922683751aafe5ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cb83390124b54dc4c7f9f2d1d77d6fc = $(`<div id="html_1cb83390124b54dc4c7f9f2d1d77d6fc" style="width: 100.0%; height: 100.0%;"><b>Glencoe Village</b><br>Station 4</div>`)[0];
+                popup_ef6a9e6b97016d23922683751aafe5ce.setContent(html_1cb83390124b54dc4c7f9f2d1d77d6fc);
+            
+        
+
+        marker_462b168d06cd16fed3730ad27ae84ca0.bindPopup(popup_ef6a9e6b97016d23922683751aafe5ce)
+        ;
+
+        
+    
+    
+            marker_462b168d06cd16fed3730ad27ae84ca0.bindTooltip(
+                `<div>
+                     Glencoe Village
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9037de08ae7cc52bcfdc31718864e5a6 = L.circleMarker(
+                [56.6829, -5.1026],
+                {"bubblingMouseEvents": true, "color": "#2b78e4", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b78e4", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(map_ac6ae5e393edf99f36ec120c7adb390a);
+        
+    
+        var popup_22fa0d838879a50135f04d5a31bf34f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9168bc31db414a87ad2e03f5c1f51caf = $(`<div id="html_9168bc31db414a87ad2e03f5c1f51caf" style="width: 100.0%; height: 100.0%;">Glencoe Village — Stop 4</div>`)[0];
+                popup_22fa0d838879a50135f04d5a31bf34f2.setContent(html_9168bc31db414a87ad2e03f5c1f51caf);
+            
+        
+
+        circle_marker_9037de08ae7cc52bcfdc31718864e5a6.bindPopup(popup_22fa0d838879a50135f04d5a31bf34f2)
+        ;
+
+        
+    
+    
+            circle_marker_9037de08ae7cc52bcfdc31718864e5a6.bindTooltip(
+                `<div>
+                     Glencoe Village (Stop 4)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

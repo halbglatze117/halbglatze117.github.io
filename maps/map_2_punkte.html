@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6c8f2ef076597613e69a1a266c182a99 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6c8f2ef076597613e69a1a266c182a99" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6c8f2ef076597613e69a1a266c182a99 = L.map(
+                "map_6c8f2ef076597613e69a1a266c182a99",
+                {
+                    center: [40.0, 45.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b29ba4d32c18947ad8b3c9fe8361c9b1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b29ba4d32c18947ad8b3c9fe8361c9b1.addTo(map_6c8f2ef076597613e69a1a266c182a99);
+        
+    
+            var tile_layer_8ccf243f63c6401a6e7441095ea121b8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8ccf243f63c6401a6e7441095ea121b8.addTo(map_6c8f2ef076597613e69a1a266c182a99);
+        
+    
+            var marker_cb98d4d91f3684ce3db8a8437c44bd04 = L.marker(
+                [49.9929, 8.2473],
+                {
+}
+            ).addTo(map_6c8f2ef076597613e69a1a266c182a99);
+        
+    
+            var icon_27d5b2e4f0a85c22c53d87f33188a330 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "university",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff106a090a8474b059935143fad015cf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1c92c44046f95eadde26e346d93f6123 = $(`<div id="html_1c92c44046f95eadde26e346d93f6123" style="width: 100.0%; height: 100.0%;"><b>Hochschule Mainz</b><br>Studienort – Beispiel-Popup</div>`)[0];
+                popup_ff106a090a8474b059935143fad015cf.setContent(html_1c92c44046f95eadde26e346d93f6123);
+            
+        
+
+        marker_cb98d4d91f3684ce3db8a8437c44bd04.bindPopup(popup_ff106a090a8474b059935143fad015cf)
+        ;
+
+        
+    
+    
+            marker_cb98d4d91f3684ce3db8a8437c44bd04.bindTooltip(
+                `<div>
+                     Hochschule Mainz
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cb98d4d91f3684ce3db8a8437c44bd04.setIcon(icon_27d5b2e4f0a85c22c53d87f33188a330);
+            
+    
+            var marker_a1fb679d981b473c263387631b0452c0 = L.marker(
+                [52.5186, 13.3762],
+                {
+}
+            ).addTo(map_6c8f2ef076597613e69a1a266c182a99);
+        
+    
+            var icon_3a0db11a8e42b8042c84e45b0812685c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "landmark",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9899957eeec5512364571ade12b207ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f490142021e2ffaf1eaebe2059ccf6bd = $(`<div id="html_f490142021e2ffaf1eaebe2059ccf6bd" style="width: 100.0%; height: 100.0%;"><b>Bundestag (Reichstag)</b><br>Platz der Republik, Berlin</div>`)[0];
+                popup_9899957eeec5512364571ade12b207ad.setContent(html_f490142021e2ffaf1eaebe2059ccf6bd);
+            
+        
+
+        marker_a1fb679d981b473c263387631b0452c0.bindPopup(popup_9899957eeec5512364571ade12b207ad)
+        ;
+
+        
+    
+    
+            marker_a1fb679d981b473c263387631b0452c0.bindTooltip(
+                `<div>
+                     Bundestag Berlin (Reichstag)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a1fb679d981b473c263387631b0452c0.setIcon(icon_3a0db11a8e42b8042c84e45b0812685c);
+            
+    
+            var marker_40ceaa94c49b07224d801dffe8f4f0e9 = L.marker(
+                [50.1072, 8.6638],
+                {
+}
+            ).addTo(map_6c8f2ef076597613e69a1a266c182a99);
+        
+    
+            var icon_1c47062e67e9d62d44a423d64cc87625 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "train",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3fe5569a4d0ee153288284697ecb9486 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6de78afdccc1fde30a4049e2e0cf8a4d = $(`<div id="html_6de78afdccc1fde30a4049e2e0cf8a4d" style="width: 100.0%; height: 100.0%;"><b>Frankfurt Hbf</b><br>Wichtiger Verkehrsknotenpunkt</div>`)[0];
+                popup_3fe5569a4d0ee153288284697ecb9486.setContent(html_6de78afdccc1fde30a4049e2e0cf8a4d);
+            
+        
+
+        marker_40ceaa94c49b07224d801dffe8f4f0e9.bindPopup(popup_3fe5569a4d0ee153288284697ecb9486)
+        ;
+
+        
+    
+    
+            marker_40ceaa94c49b07224d801dffe8f4f0e9.bindTooltip(
+                `<div>
+                     Frankfurt Hauptbahnhof
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_40ceaa94c49b07224d801dffe8f4f0e9.setIcon(icon_1c47062e67e9d62d44a423d64cc87625);
+            
+    
+            map_6c8f2ef076597613e69a1a266c182a99.fitBounds(
+                [[49.9929, 8.2473], [52.5186, 13.3762], [50.1072, 8.6638]],
+                {"padding": [20, 20]}
+            );
+        
+    
+            var layer_control_c416fb9c8c7c4b063f641905abe4432e_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_b29ba4d32c18947ad8b3c9fe8361c9b1,
+                    "Carto Light" : tile_layer_8ccf243f63c6401a6e7441095ea121b8,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_c416fb9c8c7c4b063f641905abe4432e = L.control.layers(
+                layer_control_c416fb9c8c7c4b063f641905abe4432e_layers.base_layers,
+                layer_control_c416fb9c8c7c4b063f641905abe4432e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_6c8f2ef076597613e69a1a266c182a99);
+
+        
+</script>
+</html>
