@@ -17,23 +17,37 @@
     <div style="margin-top:6px;word-break:break-all;"><a id="tilesetLink" href="#" target="_blank" rel="noopener noreferrer">(Tileset-URL)</a></div>
   </div>
   <script>
-    // Hinweis: Basemap.de bietet 3D-Gebäude als 3D-Tiles an. Um diese anzuzeigen,
-    // setze die Variable TILESET_URL auf die vom Dienst bereitgestellte tileset.json-URL
-    // Die vom Benutzer angegebene URL wurde hier eingefügt.
-
     const TILESET_URL = 'https://sgx.geodatenzentrum.de/gdz_basemapde_3d_gebaeude/lod2_4978_dgm5.json';
 
     // Initialize Cesium Viewer
     const viewer = new Cesium.Viewer('cesiumContainer', {
       timeline: false,
       animation: false,
-      baseLayerPicker: true,
+      baseLayerPicker: false,
       geocoder: false,
       homeButton: true,
       sceneModePicker: true,
       navigationHelpButton: false,
       infoBox: false,
       shouldAnimate: true
+    });
+
+    // Add OpenStreetMap as a fallback base layer so viewer is not a black box
+    try {
+      // Remove default imagery and add OSM tiles
+      viewer.imageryLayers.removeAll();
+      viewer.imageryLayers.addImageryProvider(new Cesium.UrlTemplateImageryProvider({
+        url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        subdomains: ['a','b','c'],
+        credit: '© OpenStreetMap contributors'
+      }));
+    } catch (e) {
+      console.warn('Fehler beim Hinzufügen des OSM-Basiskarten-Layers:', e);
+    }
+
+    // Set an initial camera view (Germany overview)
+    viewer.camera.setView({
+      destination: Cesium.Cartesian3.fromDegrees(10.0, 51.2, 500000) // lon, lat, height
     });
 
     // Update the hint overlay link to point to the actual tileset URL
@@ -64,10 +78,13 @@
       const tileset = new Cesium.Cesium3DTileset({ url: TILESET_URL });
       viewer.scene.primitives.add(tileset);
       tileset.readyPromise.then(function() {
-        viewer.zoomTo(tileset);
+        // Zoom closer to tileset when ready
+        viewer.zoomTo(tileset).otherwise(function(){
+          // fallback: fly to default view
+          viewer.camera.flyTo({destination: Cesium.Cartesian3.fromDegrees(10.0,51.2,2000)});
+        });
       }).otherwise(function(error){
         console.error(error);
-        // Sichtbare Fehlermeldung einblenden
         const err = document.createElement('div');
         err.id = 'tilesetError';
         err.style.position = 'absolute';
@@ -81,7 +98,7 @@
         err.style.borderRadius = '6px';
         err.style.maxWidth = '60vw';
         err.style.whiteSpace = 'pre-wrap';
-        err.textContent = 'Fehler beim Laden des 3D-Tilesets.\nPrüfe die Console für Details.\n' + (error && error.message ? error.message : String(error));
+        err.textContent = 'Fehler beim Laden des 3D-Tilesets.\nPrüfe die Entwickler-Konsole (Network/CORS).\n' + (error && error.message ? error.message : String(error));
         document.body.appendChild(err);
       });
     }

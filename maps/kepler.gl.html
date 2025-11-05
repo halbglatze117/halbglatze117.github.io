@@ -40,10 +40,9 @@
         <script src="https://unpkg.com/react-redux@8.1.2/dist/react-redux.min.js" crossorigin></script>
         <script src="https://unpkg.com/styled-components@6.1.8/dist/styled-components.min.js" crossorigin></script>
 
-        <!-- Load MapLibre GL (required by kepler.gl when Mapbox GL is unavailable) -->
+        <!-- Load MapLibre GL and alias to mapboxgl for kepler.gl -->
         <script src="https://unpkg.com/maplibre-gl@3.5.2/dist/maplibre-gl.js" crossorigin></script>
         <script>
-          // Kepler.gl expects a global `mapboxgl`. MapLibre exposes `maplibregl` — map it so Kepler can use MapLibre as a drop-in replacement.
           if (typeof maplibregl !== 'undefined' && typeof window.mapboxgl === 'undefined') {
             window.mapboxgl = maplibregl;
           }
