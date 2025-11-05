@@ -11,15 +11,15 @@
 </head>
 <body>
   <div id="cesiumContainer"></div>
-  <div style="position:absolute;left:12px;top:12px;z-index:999;background:rgba(255,255,255,0.9);padding:6px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);font-size:0.9rem;">
-    Hinweis: Tausche TILESET_URL mit der 3D‑Tiles-Tileset‑URL (z. B. Anbieter basemap.de) oder lade die offizielle Beispiel‑URL hierher.
+  <!-- Hinweis-Overlay: jetzt wird die tatsächlich verwendete URL angezeigt -->
+  <div id="tilesetHint" style="position:absolute;left:12px;top:12px;z-index:999;background:rgba(255,255,255,0.95);padding:8px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);font-size:0.9rem;max-width:60vw;line-height:1.3;">
+    Hinweis: Dieses Beispiel lädt 3D-Gebäude über ein 3D-Tiles-Tileset. Verwendete tileset.json-URL:
+    <div style="margin-top:6px;word-break:break-all;"><a id="tilesetLink" href="#" target="_blank" rel="noopener noreferrer">(Tileset-URL)</a></div>
   </div>
   <script>
     // Hinweis: Basemap.de bietet 3D-Gebäude als 3D-Tiles an. Um diese anzuzeigen,
     // setze die Variable TILESET_URL auf die vom Dienst bereitgestellte tileset.json-URL
-    // Beispiel:
-    // const TILESET_URL = 'https://example.com/tiles/tileset.json';
-    // Wenn Du die echte URL von basemap.de hast, trage sie unten ein.
+    // Die vom Benutzer angegebene URL wurde hier eingefügt.
 
     const TILESET_URL = 'https://sgx.geodatenzentrum.de/gdz_basemapde_3d_gebaeude/lod2_4978_dgm5.json';
 
@@ -36,6 +36,15 @@
       shouldAnimate: true
     });
 
+    // Update the hint overlay link to point to the actual tileset URL
+    (function(){
+      const link = document.getElementById('tilesetLink');
+      if(link){
+        link.href = TILESET_URL;
+        link.textContent = TILESET_URL;
+      }
+    })();
+
     if (!TILESET_URL) {
       console.warn('TILESET_URL ist leer. Bitte setze die tileset.json-URL in dieser Datei.');
       const el = document.createElement('div');
@@ -43,7 +52,7 @@
       el.style.left = '12px';
       el.style.bottom = '12px';
       el.style.zIndex = '999';
-      el.style.background = 'rgba(255,255,255,0.9)';
+      el.style.background = 'rgba(255,255,255,0.95)';
       el.style.padding = '8px';
       el.style.border = '1px solid rgba(0,0,0,0.06)';
       el.style.borderRadius = '6px';
@@ -58,7 +67,22 @@
         viewer.zoomTo(tileset);
       }).otherwise(function(error){
         console.error(error);
-        alert('Fehler beim Laden des 3D-Tilesets. Siehe Konsole.');
+        // Sichtbare Fehlermeldung einblenden
+        const err = document.createElement('div');
+        err.id = 'tilesetError';
+        err.style.position = 'absolute';
+        err.style.left = '12px';
+        err.style.bottom = '12px';
+        err.style.zIndex = '1000';
+        err.style.background = 'rgba(255,230,230,0.98)';
+        err.style.color = '#900';
+        err.style.padding = '10px';
+        err.style.border = '1px solid rgba(150,0,0,0.15)';
+        err.style.borderRadius = '6px';
+        err.style.maxWidth = '60vw';
+        err.style.whiteSpace = 'pre-wrap';
+        err.textContent = 'Fehler beim Laden des 3D-Tilesets.\nPrüfe die Console für Details.\n' + (error && error.message ? error.message : String(error));
+        document.body.appendChild(err);
       });
     }
   </script>
