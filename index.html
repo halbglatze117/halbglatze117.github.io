@@ -417,12 +417,21 @@
                 <section id="panel-projects" class="panel" role="tabpanel" aria-labelledby="tab-projects" hidden>
                     <!-- Projects: Galerie / Web-Maps -->
                     <h2 style="margin-top:0;">Projekte &amp; Links</h2>
-                    <div class="maps-iframes" style="display:grid;gap:12px;">
-                        <iframe src="https://halbglatze117.github.io/maps/map_1_basiskarte.html" title="Map 1 — Basiskarte" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
-                        <iframe src="https://halbglatze117.github.io/maps/map_2_punkte.html" title="Map 2 — Punkte" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
-                        <iframe src="https://halbglatze117.github.io/maps/map_3_reiseroute.html" title="Map 3 — Reiseroute" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
-                        <iframe src="https://halbglatze117.github.io/maps/map_4_flaechen_online.html" title="Map 4 — Besuchte Orte" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
+                    <div class="maps-iframes" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+                        <iframe src="/maps/map_1_basiskarte.html" title="Map 1 — Basiskarte" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
+                        <iframe src="/maps/map_2_punkte.html" title="Map 2 — Punkte" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
+                        <iframe src="/maps/map_3_reiseroute.html" title="Map 3 — Reiseroute" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
+                        <iframe src="/maps/map_4_flaechen_online.html" title="Map 4 — Besuchte Orte" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
+                        <!-- Cesium 3D-Gebäude (öffnet in neuem Tab) -->
+                        <iframe src="/maps/cesium_buildings.html" title="3D-Gebäude (Cesium)" width="100%" height="420" style="border:1px solid rgba(0,0,0,0.08);border-radius:8px;" loading="lazy" allowfullscreen></iframe>
                     </div>
+
+                    <style>
+                        /* Responsive: bei kleinen Bildschirmen auf 1 Spalte */
+                        @media (max-width: 880px) {
+                            .maps-iframes { grid-template-columns: 1fr !important; }
+                        }
+                    </style>
                 </section>
             </div>
         </div>
